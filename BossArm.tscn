@@ -58,6 +58,7 @@ skew = -3.60012e-05
 shape = SubResource("RectangleShape2D_go731")
 
 [node name="Node2D" type="Node2D" parent="."]
+position = Vector2(21, -62)
 
 [node name="CollisionArea" type="Area2D" parent="Node2D"]
 collision_layer = 2
@@ -109,6 +110,22 @@ position = Vector2(774.001, 1)
 
 [node name="Fuego4" type="Marker2D" parent="FuegoSpawns"]
 position = Vector2(1010, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -27.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Node2D/CollisionArea" to="Node2D/CollisionArea" method="_on_body_entered"]
