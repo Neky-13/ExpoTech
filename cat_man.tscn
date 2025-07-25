@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://hrgcdc8n3eju"]
+
+[ext_resource type="Texture2D" uid="uid://dsy71uhcvufsb" path="res://icon.svg" id="1_2ob7y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05i7o"]
+
+[node name="CatMan" type="CharacterBody2D"]
+position = Vector2(0, -60)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2ob7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6.16509, 5.89951)
+shape = SubResource("RectangleShape2D_05i7o")

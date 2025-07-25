@@ -1,0 +1,15 @@
+TileMap
+ProgressBar
+Sprite2D
+AnimationPlayer
+CollisionShape2D
+CharacterBody2D
+AnimationTree
+Camera2D
+AnimatedSprite2D
+Area2D
+VisibleOnScreenNotifier2D
+VisibleOnScreenEnabler2D
+Node2D
+Node
+Label

@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4g1w1hbjje0o"]
+
+[ext_resource type="Texture2D" uid="uid://xsh3p8jv6dwv" path="res://pixil-layer-1.png" id="1_8n0vj"]
+[ext_resource type="Texture2D" uid="uid://iqi84ie2b2hv" path="res://pixil-layer-2.png" id="2_nvksv"]
+[ext_resource type="Texture2D" uid="uid://c81xs08b7bjsx" path="res://pixil-layer-3.png" id="3_neksk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1vo62"]
+size = Vector2(19.6604, 17.9412)
+
+[node name="suelo" type="StaticBody2D"]
+position = Vector2(23, 2)
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.19735, -8.96297)
+scale = Vector2(12.9395, 1.00741)
+shape = SubResource("RectangleShape2D_1vo62")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.3, 1)
+motion_mirroring = Vector2(204.8, 0)
+
+[node name="Pixil-layer-1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(-2, -73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_8n0vj")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.2, 1)
+motion_mirroring = Vector2(204.8, 0)
+
+[node name="Pixil-layer-2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(-2, -73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_nvksv")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.4, 1)
+motion_mirroring = Vector2(204.8, 0)
+
+[node name="Pixil-layer-3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+texture_filter = 1
+position = Vector2(-2, -73)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_neksk")

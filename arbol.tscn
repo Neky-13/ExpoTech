@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnt6twdohg0y8"]
+
+[ext_resource type="Script" uid="uid://d4mbkahos1c6a" path="res://arbol.gd" id="1_rcsqm"]
+[ext_resource type="Texture2D" uid="uid://cx0v86sdq703q" path="res://tree 0050000.png" id="2_rcsqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_omjyp"]
+
+[sub_resource type="Animation" id="Animation_rcsqm"]
+resource_name = "brotar"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ci4l3"]
+_data = {
+&"brotar": SubResource("Animation_rcsqm")
+}
+
+[node name="Area2D" type="Area2D"]
+scale = Vector2(1.6, 1.5)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_rcsqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(7.70973, 16.6214)
+texture = ExtResource("2_rcsqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(4.08986, 26.3744)
+shape = SubResource("RectangleShape2D_omjyp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_ci4l3")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

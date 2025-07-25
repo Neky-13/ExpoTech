@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://du4x1am8rg43g"]
+
+[ext_resource type="Script" uid="uid://uwl4grw0us8e" path="res://fuego_tscn.gd" id="1_hqaxy"]
+[ext_resource type="Texture2D" uid="uid://bj6yprak5ohwb" path="res://Fire_Spreadsheet.png" id="2_hqaxy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fmioq"]
+
+[sub_resource type="Animation" id="Animation_hqaxy"]
+resource_name = "Fuego"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.966667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fmioq"]
+_data = {
+&"Fuego": SubResource("Animation_hqaxy")
+}
+
+[node name="Area2D" type="Area2D"]
+texture_filter = 1
+scale = Vector2(0.7, 0.7)
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_hqaxy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, -8)
+texture = ExtResource("2_hqaxy")
+hframes = 2
+vframes = 2
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 46)
+scale = Vector2(11.1163, -11.3325)
+shape = SubResource("CircleShape2D_fmioq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_fmioq")
+}
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkkdt482u40iy"]
+
+[ext_resource type="Texture2D" uid="uid://dsy71uhcvufsb" path="res://icon.svg" id="1_uu6xs"]
+[ext_resource type="PackedScene" uid="uid://cfbv02mjy4w5y" path="res://Jugador.tscn" id="2_r0du0"]
+
+[sub_resource type="Animation" id="Animation_7ed21"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.330894]
+}
+
+[sub_resource type="Animation" id="Animation_go731"]
+resource_name = "golpe_brazo"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0041689, -0.330894, -0.721464, -0.323057, 0.0041689]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6ipi"]
+_data = {
+&"RESET": SubResource("Animation_7ed21"),
+&"golpe_brazo": SubResource("Animation_go731")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0du0"]
+size = Vector2(17.5386, 20)
+
+[node name="Area2D" type="Area2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(735.25, 483.118)
+rotation = -2.80145
+scale = Vector2(26.5036, -3.49195)
+skew = -3.60012e-05
+
+[node name="Brazo" type="Sprite2D" parent="Area2D"]
+position = Vector2(-15.3539, -76.5147)
+rotation = -1.63821
+scale = Vector2(1.30362, -0.049265)
+skew = -1.25172
+texture = ExtResource("1_uu6xs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(-7.43624, 0.0392227)
+rotation = -1.73525
+scale = Vector2(0.223835, -0.2289)
+skew = -1.29991
+texture = ExtResource("1_uu6xs")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Area2D/Sprite2D"]
+position = Vector2(-126.365, -123.144)
+rotation = 0.753028
+scale = Vector2(3.30317, 0.501009)
+texture = ExtResource("1_uu6xs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+root_node = NodePath("../..")
+libraries = {
+&"": SubResource("AnimationLibrary_e6ipi")
+}
+
+[node name="FuegoSpawns" type="Node2D" parent="Area2D"]
+position = Vector2(32.2333, -60.1783)
+rotation = -1.92719
+scale = Vector2(0.101947, -0.270258)
+skew = -1.16781
+
+[node name="Fuego1" type="Marker2D" parent="Area2D/FuegoSpawns"]
+position = Vector2(106, 4)
+
+[node name="Fuego2" type="Marker2D" parent="Area2D/FuegoSpawns"]
+position = Vector2(328, 2)
+
+[node name="Fuego3" type="Marker2D" parent="Area2D/FuegoSpawns"]
+position = Vector2(566, 5)
+
+[node name="ArbolSpawns" type="Node2D" parent="Area2D"]
+position = Vector2(32.2333, -60.1783)
+rotation = -1.92719
+scale = Vector2(0.101947, -0.270258)
+skew = -1.16781
+
+[node name="Arbol1" type="Marker2D" parent="Area2D/ArbolSpawns"]
+position = Vector2(61, 644)
+
+[node name="Arbol2" type="Marker2D" parent="Area2D/ArbolSpawns"]
+position = Vector2(368, 644)
+
+[node name="Arbol3" type="Marker2D" parent="Area2D/ArbolSpawns"]
+position = Vector2(638, 643)
+
+[node name="CharacterBody2D" parent="Area2D" instance=ExtResource("2_r0du0")]
+position = Vector2(30.8904, -67.4306)
+rotation = -1.92719
+scale = Vector2(0.101947, -0.270258)
+skew = -1.16781
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_r0du0")
