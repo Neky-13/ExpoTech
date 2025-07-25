@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://dxjuq2u5nyc53"]
 
-[ext_resource type="Script" uid="uid://d3na0hmj51j0r" path="res://scenes/player.gd" id="1_3vyb7"]
-[ext_resource type="PackedScene" uid="uid://cj57csce1i5qe" path="res://scenes/bullet.tscn" id="2_g2els"]
+[ext_resource type="Script" uid="uid://d3na0hmj51j0r" path="res://codigos jefe 2/player.gd" id="1_3vyb7"]
+[ext_resource type="PackedScene" uid="uid://cj57csce1i5qe" path="res://Scenas jefe 2/bullet.tscn" id="2_g2els"]
 [ext_resource type="Texture2D" uid="uid://wmvmgb65wlem" path="res://2 GraveRobber/Swim.png" id="3_qhqgy"]
 [ext_resource type="Texture2D" uid="uid://0wurtkdwhgid" path="res://2 GraveRobber/Swim2.png" id="4_dqkch"]
 

@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://dpvqh0gt06bw6"]
+
+[ext_resource type="Script" uid="uid://bc1q4nxivucna" path="res://Codigos jefe 1/boss_arm.gd" id="1_aed1s"]
+[ext_resource type="Script" uid="uid://74b1vnr6o0er" path="res://Codigos jefe 1/collision_area.gd" id="2_go731"]
+[ext_resource type="Texture2D" uid="uid://jtplr3feen7r" path="res://Sprites de los dos B/Copilot_20250724_181353.png" id="3_go731"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_go731"]
+size = Vector2(17.5386, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7ed21"]
+
+[sub_resource type="Animation" id="Animation_7ed21"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/CollisionArea/Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-5.20319]
+}
+
+[sub_resource type="Animation" id="Animation_go731"]
+resource_name = "golpe_brazo"
+length = 1.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Node2D/CollisionArea/Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.333333, 0.633333, 0.933333, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [-5.20319, -4.78687, -4.218, -4.40491, -5.1692]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e6ipi"]
+_data = {
+&"RESET": SubResource("Animation_7ed21"),
+&"golpe_brazo": SubResource("Animation_go731")
+}
+
+[node name="Area2D" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_aed1s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(824, 480)
+rotation = -3.43565
+scale = Vector2(26.5036, -3.49195)
+skew = -3.60012e-05
+shape = SubResource("RectangleShape2D_go731")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(21, -62)
+
+[node name="CollisionArea" type="Area2D" parent="Node2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("2_go731")
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D/CollisionArea"]
+position = Vector2(875, 444)
+rotation = -5.20319
+scale = Vector2(0.7, 0.8)
+skew = -0.0103022
+texture = ExtResource("3_go731")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/CollisionArea"]
+position = Vector2(837, 469)
+rotation = -0.389372
+scale = Vector2(26.5821, 6.80723)
+shape = SubResource("RectangleShape2D_7ed21")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_e6ipi")
+}
+
+[node name="ArbolSpawns" type="Node2D" parent="."]
+position = Vector2(-6.10352e-05, -0.00012207)
+
+[node name="Arbol1" type="Marker2D" parent="ArbolSpawns"]
+position = Vector2(61, 644)
+
+[node name="Arbol2" type="Marker2D" parent="ArbolSpawns"]
+position = Vector2(368, 644)
+
+[node name="Arbol3" type="Marker2D" parent="ArbolSpawns"]
+position = Vector2(638, 643)
+
+[node name="FuegoSpawns" type="Node2D" parent="."]
+position = Vector2(-0.000854492, 0)
+scale = Vector2(1, 0.999997)
+
+[node name="Fuego1" type="Marker2D" parent="FuegoSpawns"]
+position = Vector2(197.001, 3.00001)
+
+[node name="Fuego2" type="Marker2D" parent="FuegoSpawns"]
+position = Vector2(488.001, 1)
+
+[node name="Fuego3" type="Marker2D" parent="FuegoSpawns"]
+position = Vector2(774.001, 1)
+
+[node name="Fuego4" type="Marker2D" parent="FuegoSpawns"]
+position = Vector2(1010, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer"]
+custom_minimum_size = Vector2(200, 0)
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -2.0
+offset_top = -27.0
+offset_right = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+value = 100.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Node2D/CollisionArea" to="Node2D/CollisionArea" method="_on_body_entered"]

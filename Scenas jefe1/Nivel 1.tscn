@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://c3clnys0c6vp1"]
 
-[ext_resource type="PackedScene" uid="uid://dpvqh0gt06bw6" path="res://BossArm.tscn" id="1_q4lj4"]
-[ext_resource type="PackedScene" uid="uid://cfbv02mjy4w5y" path="res://Jugador.tscn" id="2_1boc4"]
+[ext_resource type="PackedScene" uid="uid://dpvqh0gt06bw6" path="res://Scenas jefe1/BossArm.tscn" id="1_q4lj4"]
+[ext_resource type="PackedScene" uid="uid://cfbv02mjy4w5y" path="res://Scenas jefe1/Jugador.tscn" id="2_1boc4"]
 [ext_resource type="Texture2D" uid="uid://xsh3p8jv6dwv" path="res://pixil-layer-1.png" id="5_3mvlh"]
 [ext_resource type="Texture2D" uid="uid://c81xs08b7bjsx" path="res://pixil-layer-3.png" id="5_oyj17"]
 [ext_resource type="Texture2D" uid="uid://iqi84ie2b2hv" path="res://pixil-layer-2.png" id="6_012ah"]

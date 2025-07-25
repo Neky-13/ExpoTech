@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bj6yprak5ohwb"
-path="res://.godot/imported/Fire_Spreadsheet.png-734dc516c45fce762f46d66903e88fd9.ctex"
+path="res://.godot/imported/Fire_Spreadsheet.png-0584de73a6c6d24113b94f0626e01ef2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Fire_Spreadsheet.png"
-dest_files=["res://.godot/imported/Fire_Spreadsheet.png-734dc516c45fce762f46d66903e88fd9.ctex"]
+source_file="res://Sprites de los dos B/Fire_Spreadsheet.png"
+dest_files=["res://.godot/imported/Fire_Spreadsheet.png-0584de73a6c6d24113b94f0626e01ef2.ctex"]
 
 [params]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnt6twdohg0y8"]
 
-[ext_resource type="Script" uid="uid://d4mbkahos1c6a" path="res://arbol.gd" id="1_rcsqm"]
-[ext_resource type="Texture2D" uid="uid://cx0v86sdq703q" path="res://tree 0050000.png" id="2_rcsqm"]
+[ext_resource type="Script" uid="uid://d4mbkahos1c6a" path="res://Codigos jefe 1/arbol.gd" id="1_k30fr"]
+[ext_resource type="Texture2D" uid="uid://cx0v86sdq703q" path="res://Sprites de los dos B/tree 0050000.png" id="2_3ilk8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_omjyp"]
 
@@ -31,12 +31,12 @@ _data = {
 scale = Vector2(1.6, 1.5)
 collision_layer = 2
 collision_mask = 2
-script = ExtResource("1_rcsqm")
+script = ExtResource("1_k30fr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(7.70973, 16.6214)
-texture = ExtResource("2_rcsqm")
+texture = ExtResource("2_3ilk8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(4.08986, 26.3744)

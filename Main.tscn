@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dkkdt482u40iy"]
 
 [ext_resource type="Texture2D" uid="uid://dsy71uhcvufsb" path="res://icon.svg" id="1_uu6xs"]
-[ext_resource type="PackedScene" uid="uid://cfbv02mjy4w5y" path="res://Jugador.tscn" id="2_r0du0"]
+[ext_resource type="PackedScene" uid="uid://cfbv02mjy4w5y" path="res://Scenas jefe1/Jugador.tscn" id="2_r0du0"]
 
 [sub_resource type="Animation" id="Animation_7ed21"]
 length = 0.001
@@ -113,5 +113,4 @@ scale = Vector2(0.101947, -0.270258)
 skew = -1.16781
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_r0du0")

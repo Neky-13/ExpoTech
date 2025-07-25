@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jtplr3feen7r"
-path="res://.godot/imported/Copilot_20250724_181353.png-1dcc286bc551a1d2ea113381abf78838.ctex"
+path="res://.godot/imported/Copilot_20250724_181353.png-f479987c885330364420cbdcea137e6a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Copilot_20250724_181353.png"
-dest_files=["res://.godot/imported/Copilot_20250724_181353.png-1dcc286bc551a1d2ea113381abf78838.ctex"]
+source_file="res://Sprites de los dos B/Copilot_20250724_181353.png"
+dest_files=["res://.godot/imported/Copilot_20250724_181353.png-f479987c885330364420cbdcea137e6a.ctex"]
 
 [params]
 
