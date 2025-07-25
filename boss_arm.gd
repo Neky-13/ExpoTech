@@ -1,6 +1,5 @@
 extends Area2D
 
-@onready var progress_bar =$CanvasLayer/ProgressBar
 @export var vida := 100
 var fuego_escena := preload("res://fuego_tscn.tscn")
 var arbol_escena := preload("res://arbol.tscn")

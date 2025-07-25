@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dpvqh0gt06bw6"]
+[gd_scene load_steps=10 format=3 uid="uid://dpvqh0gt06bw6"]
 
 [ext_resource type="Script" uid="uid://bc1q4nxivucna" path="res://boss_arm.gd" id="1_aed1s"]
 [ext_resource type="Script" uid="uid://74b1vnr6o0er" path="res://collision_area.gd" id="2_go731"]
 [ext_resource type="Texture2D" uid="uid://jtplr3feen7r" path="res://Copilot_20250724_181353.png" id="3_go731"]
+[ext_resource type="Script" uid="uid://c5g6qrn5fvd1j" path="res://scenes/progress_bar.gd" id="4_7ed21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_go731"]
 size = Vector2(17.5386, 20)
@@ -126,6 +127,7 @@ offset_right = 2.0
 grow_horizontal = 2
 grow_vertical = 0
 value = 100.0
+script = ExtResource("4_7ed21")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_entered" from="Node2D/CollisionArea" to="Node2D/CollisionArea" method="_on_body_entered"]
